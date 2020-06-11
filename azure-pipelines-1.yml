@@ -24,6 +24,7 @@ variables:
   sonarSources: '.'
   sonarJavaSource: '.'
   sonarJavaBinaries: '.'
+  sonar.branch: 'master'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   #Build Artifacts
