@@ -2,6 +2,11 @@
 #Checkout,Codescan,QualityCheck,Build,UploadArtifacts and Deploy To Webapp
 name: $(build.sourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
 pr:
+  branches:
+    include:
+    - '*'
+    exclude:
+    - 'refs/tags/*'
 - master
 variables:
   sonarServiceConnection: 'sonar-ahold'
