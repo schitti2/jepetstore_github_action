@@ -7,7 +7,6 @@ pr:
     - '*'
     exclude:
     - 'refs/tags/*'
-- master
 variables:
   sonarServiceConnection: 'sonar-ahold'
   sonarProjectKey: 'jpetstore'
