@@ -2,12 +2,15 @@
 #Checkout,Codescan,QualityCheck,Build,UploadArtifacts and Deploy To Webapp
 name: $(build.sourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
 trigger:
+  batch: true
   branches:
     include:
+    - master/*
+    exclude:
     - '*'
-  tags:
-     exclude:
-     - '*'
+  paths:
+    exclude:
+    - README.md
 pr:
   branches:
     include:
