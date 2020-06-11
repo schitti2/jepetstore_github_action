@@ -1,6 +1,13 @@
 #Java
 #Checkout,Codescan,QualityCheck,Build,UploadArtifacts and Deploy To Webapp
 name: $(build.sourceBranchName)-$(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+  branches:
+    include:
+    - '*'
+  tags:
+     exclude:
+     - '*'
 pr:
   branches:
     include:
