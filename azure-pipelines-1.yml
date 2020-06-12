@@ -72,19 +72,3 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-    - task: UniversalPackages@0
-      displayName: PublishArtifacts
-      inputs:
-        command: 'publish'
-        publishDirectory: $(artifactsPath)
-        feedsToUsePublish: 'internal'
-        vstsFeedPublish: $(azureFeedPublishName)
-        vstsFeedPackagePublish: $(azureArtifactName)
-        versionOption: 'patch'
-    - task: AzureWebApp@1
-      displayName: App Deployment
-      inputs:
-        azureSubscription: $(azureServiceConnectionId)
-        appType: 'webAppLinux'
-        appName: $(webServer)
-        package: $(artifactsPath)
