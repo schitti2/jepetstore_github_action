@@ -5,18 +5,8 @@ trigger:
   batch: true
   branches:
     include:
-    - master/*
-    exclude:
-    - '*'
-  paths:
-    exclude:
-    - README.md
-pr:
-  branches:
-    include:
-    - '*'
-    exclude:
-    - 'refs/tags/*'
+    - master
+pr: none
 variables:
   sonarServiceConnection: 'sonar-ahold'
   sonarProjectKey: 'jpetstore'
